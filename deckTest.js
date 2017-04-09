@@ -1,5 +1,5 @@
-var assert = require('assert');
-require('./Deck');
+const assert = require('assert');
+const Deck = require('./Deck');
 
 describe('Deck', function() {
   it('has an array of 52 cards', function () {
