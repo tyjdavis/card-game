@@ -1,5 +1,5 @@
 var assert = require('assert');
-let Card = require('./Card');
+let Card = require('../lib/Card');
 
 describe('Card', function() {
   it('has a suit', function () {
