@@ -7,11 +7,12 @@ describe('Card', function() {
     let card = new Card(3, 'Clubs');
     assert.equal('Clubs', card.suit);
   });
-  
+
   it('has a value', function () {
     let card = new Card(3, 'Clubs');
     assert.equal(3, card.value);
   });
+
 
   describe('#toString()', function() {
     it('should return a string containing suit and value', function() {
