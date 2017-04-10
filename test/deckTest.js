@@ -19,7 +19,7 @@ describe('Deck', function() {
       let deck = new Deck();
       let card = deck.deal();
       assert.equal(51, deck.cards.length);
-      let matchingCard = deck.find(otherCard => {
+      let matchingCard = deck.cards.find(otherCard => {
         return otherCard.suit == card.suit && otherCard.value == card.value;
       });
       assert.equal(matchingCard, undefined);
