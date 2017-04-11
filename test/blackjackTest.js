@@ -21,25 +21,21 @@ describe('Blackjack', function () {
     assert.equal(game.player, 'Tyler');
     assert.equal(game.dealer, 'Dealer');
   })
-  describe('#getCards()', function(){
+  describe('#gameBegin()', function(){
     it('player gets two cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      let deck = new Deck();
-      let getCardsPlayer = game.getCardsPlayer();
-      assert(getCardsPlayer);
+      let gameBegin = game.gameBegin();
+      assert.equal(game.playerDeck.length, 2);
     })
     it('dealer gets two cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      let deck = new Deck();
-      let getCardsDealer = game.getCardsDealer();
-      assert(getCardsDealer);
-      assert.equal(2, getCardsPlayer, getCardsDealer);
+      let gameBegin = game.gameBegin();
+      assert.equal(game.dealerDeck.length, 2);
     })
-    it('player can ask for another card', function(){
+  describe('#hitMe()', function () {
+    it('player can ask for more cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      let deck = new Deck();
-      let additionalCards = game.getCardsPlayer();
-      assert(additionalCards);
+      let gameBegin = game.gameBegin();    
     })
   })
 })
