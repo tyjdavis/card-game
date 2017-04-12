@@ -37,7 +37,14 @@ describe('Blackjack', function () {
     it('player can ask for more cards', function(){
     let game = new Blackjack('Tyler', 'Dealer');
     let hitMe = game.hitMe();
-    assert(hitMe );
+    assert(hitMe);
+    })
+  })
+  describe('#dealerHand()', function (){
+    it('dealer gets cards until at least 17', function(){
+    let game = new Blackjack('Tyler', 'Dealer');
+    let dealerHand = game.dealerHand();
+    assert(dealerHand);
     })
   })
 })
