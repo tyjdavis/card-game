@@ -2,8 +2,8 @@
 
 // At the start of the game, the player gets two cards and so does the dealer -done
 
-// The player can ask for another card
-// The player can repeat that request as many times as desired
+// The player can ask for another card -done
+// The player can repeat that request as many times as desired -done
 
 // Once the player doesn't want any more cards, the dealer will ask for more cards until the dealer's hand is worth at least 17
 
@@ -24,27 +24,31 @@ describe('Blackjack', function () {
   describe('#gameBegin()', function(){
     it('player gets two cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      let gameBegin = game.gameBegin();
       assert.equal(game.playerDeck.length, 2);
     })
     it('dealer gets two cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      let gameBegin = game.gameBegin();
       assert.equal(game.dealerDeck.length, 2);
     })
   })
   describe('#hitMe()', function () {
     it('player can ask for more cards', function(){
     let game = new Blackjack('Tyler', 'Dealer');
-    let hitMe = game.hitMe();
-    assert(hitMe);
+    game.hitMe(game.playerDeck);
+    assert.equal(game.playerDeck.length, 3);
     })
-  })
-  describe('#dealerHand()', function (){
-    it('dealer gets cards until at least 17', function(){
-    let game = new Blackjack('Tyler', 'Dealer');
-    let dealerHand = game.dealerHand();
-    assert(dealerHand);
+    it('dealer asking for more cards', function(){
+      let game = new Blackjack('Tyler', 'Dealer');
+      game.hitMe(game.dealerDeck);
+      assert.equal(game.dealerDeck.length, 3); 
     })
+
+  // })
+  // describe('#dealerHand()', function (){
+  //   it('dealer gets cards until at least 17', function(){
+  //   let game = new Blackjack('Tyler', 'Dealer');
+  //   let dealerHand = game.dealerHand();
+  //   assert(dealerHand);
+    //})
   })
 })
