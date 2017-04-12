@@ -32,10 +32,12 @@ describe('Blackjack', function () {
       let gameBegin = game.gameBegin();
       assert.equal(game.dealerDeck.length, 2);
     })
+  })
   describe('#hitMe()', function () {
     it('player can ask for more cards', function(){
-      let game = new Blackjack('Tyler', 'Dealer');
-      let gameBegin = game.gameBegin();    
+    let game = new Blackjack('Tyler', 'Dealer');
+    let hitMe = game.hitMe();
+    assert(hitMe );
     })
   })
 })
