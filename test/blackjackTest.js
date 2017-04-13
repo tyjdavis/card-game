@@ -31,17 +31,33 @@ describe('Blackjack', function () {
       assert.equal(game.dealerDeck.length, 2);
     })
   })
-  describe('#hitMe()', function () {
+  describe('#hit()', function () {
     it('player can ask for more cards', function(){
     let game = new Blackjack('Tyler', 'Dealer');
-    game.hitMe(game.playerDeck);
+    game.hit(game.playerDeck);
     assert.equal(game.playerDeck.length, 3);
     })
-    it('dealer asking for more cards', function(){
+    it('dealer can ask for more cards', function(){
       let game = new Blackjack('Tyler', 'Dealer');
-      game.hitMe(game.dealerDeck);
-      assert.equal(game.dealerDeck.length, 3); 
+      game.hit(game.dealerDeck);
+      assert.equal(game.dealerDeck.length, 3);
     })
+  })
+  describe('#dealerHand', function (){
+    it('dealer has a deck of card values', function() {
+    let game = new Blackjack('Tyler', 'Dealer');
+    game.dealerHand(game.dealerDeck);
+    assert(game.dealerDeck.value);
+    })
+  })
+   describe('#dealer17', function () {
+    it('dealer hand has a value of 17', function () {
+    let game = new Blackjack('Tyler', 'Dealer');
+    game.dealer17(game.dealerDeck);
+    assert.equal(game.dealerDeck.value >= 17, true);
+    })
+  })
+})
 
   // })
   // describe('#dealerHand()', function (){
@@ -50,5 +66,3 @@ describe('Blackjack', function () {
   //   let dealerHand = game.dealerHand();
   //   assert(dealerHand);
     //})
-  })
-})
